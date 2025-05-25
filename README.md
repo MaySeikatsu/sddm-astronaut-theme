@@ -1,9 +1,43 @@
-# sddm-astronaut-theme
+# Introduction - sddm-astronaut-theme-nixos
 
 ![Stars](https://img.shields.io/github/stars/keyitdev/sddm-astronaut-theme?color=dd864a&labelColor=1b1b25&style=for-the-badge)
 ![Forks](https://img.shields.io/github/forks/keyitdev/sddm-astronaut-theme?color=bf616a&labelColor=1b1b25&style=for-the-badge)
 [![Ko-fi](https://img.shields.io/badge/support_me_on_ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=f5f5f5)](https://ko-fi.com/keyitdev)
 
+## Astronaut Theme ready to use via nix-flake
+
+Hey there, I struggled myself to get the sddm-astronaut-theme to work on NixOS, but as I got it working, I packaged the sddm-astronaut-theme with a nix flake for you to use, so you don't need to go through the same struggle. I hope it helps.
+Some future changes and additional themes are loosely planed, but for now it's just the original sddm-astronaut-theme for nixos. 
+
+*Disclaimer: I am quite new to NixOS and not very experienced. Therefore I can't guarantee that it works 100% but at least "it works on my machine" :P *
+
+### How to apply
+
+**Import the Flake:** 
+```
+sddm-astronaut-theme = {
+  url = "github:MaySeikatsu/sddm-astronaut-theme";
+};
+```
+
+**Apply configuration in your configuration.nix:** 
+```
+environment.systemPackages = [
+  inputs.sddm-astronaut-theme.packages.${pkgs.system}.default.override {
+    theme = "black_hole"; #set your theme
+    themeConfig = {
+      General = {
+        HeaderText = "Hi!"; #set custom HeaderText
+        Background = "${config.stylix.image}"; #set custom image
+        FullBlur = "false";
+      };
+    };
+  }
+];
+```
+
+
+# sddm-astronaut-theme
 [sddm-astronaut-theme](https://github.com/Keyitdev/sddm-astronaut-theme) is a series of themes for the [SDDM](https://github.com/sddm/sddm/) display manager made by **[Keyitdev](https://github.com/Keyitdev)**.
 
 It's written using the latest version of Qt, which is **Qt6**. Its key features include **virtual keyboard support** and an **installation script**. This theme also support **animated wallpapers**. You can easily change its appearance by choosing another of the ten pre-made themes or creating your own. Each of these themes was created by modifying just one file - **[config](./Themes/astronaut.conf)**.
