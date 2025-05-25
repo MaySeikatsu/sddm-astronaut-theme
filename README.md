@@ -5,7 +5,7 @@
 [![Ko-fi](https://img.shields.io/badge/support_me_on_ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=f5f5f5)](https://ko-fi.com/keyitdev)
 
 ## Astronaut Theme ready to use via nix-flake
-
+**WORK IN PROGRESS**
 Hey there, I struggled myself to get the sddm-astronaut-theme to work on NixOS, but as I got it working, I packaged the sddm-astronaut-theme with a nix flake for you to use, so you don't need to go through the same struggle. I hope it helps.
 Some future changes and additional themes are loosely planed, but for now it's just the original sddm-astronaut-theme for nixos. 
 
